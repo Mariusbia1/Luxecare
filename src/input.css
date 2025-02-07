@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    .menu li{
+        @apply hover:text-primary
+    }
+    .title::before{
+        @apply absolute left-[10px] bottom-0 w-full h-[5px] bg-primary content-[""] rounded-md
+    }
+
+    .title::after{
+        @apply absolute top-0 left-[-10px] w-full h-[5px] bg-primary content-[""] rounded-md
+    }
+    .voitures img{
+        @apply h-[300px] w-full shadow-md
+    } 
+    .formulaire input{
+        @apply  rounded-md border border-gray-100 w-full p-2
+    }
+    button{
+        @apply hover:bg-white border border-primary hover:text-primary transition duration-200
+    }
+}
