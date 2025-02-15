@@ -8,6 +8,9 @@
     <head>
         <link href="https://api.fontshare.com/v2/css?f[]=chillax@200,300,400,500,600,700,1&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
     </head>
       
    </head>
@@ -15,25 +18,41 @@
 <body class="h-full mx-auto font-chillax">
     <!-- Navbar -->
      <nav class="flex items-center justify-between px-[8%] fixed top-0 left-0 z-20 bg-white w-full shadow-lg h-[50px] menu ">
+      
+        <div class="md:hidden">
+            <ion-icon onclick="ontoggleMenu(this)" name="menu" class="text-xl cursor-pointer lg:hidden"></ion-icon>
+        </div>
+      
         <div>
             <h2 class="text-3xl font-bold">Luxe<span class="text-primary ">Cars</span></h2>
         </div>
-        <div class="menu">
+      
+        <div class="items-center hidden menu md:flex">
             <ul class="flex flex-row gap-10 text-sm ">
                 <li>Accueil</li>
                 <li>Vehicule</li>
                 <li>Service</li>
                 <li>Contact</li>
             </ul>
-
         </div>
-        <div>
+        <div class="">
             <button class="px-10 h-[30px] text-sm text-white bg-primary">LOGIN</button>
+        </div>
+       
+        <!-- mobile menu -->
+
+        <div class="absolute  px-0 h-[50px]  menue mt-[100px] border border-t-2 pt-[15px]  border-b-2 border-gray-100 left-0  w-full bg-white  hidden">
+            <ul class="flex flex-row items-center justify-center  gap-10 text-sm md:hidden ">
+                <li>Accueil</li>
+                <li>Vehicule</li>
+                <li>Service</li>
+                <li>Contact</li>
+            </ul>
         </div>
      </nav>
 
      <!--main-->
-     <main class="px-[8%] z-0">
+     <main class="px-[8%] pt-[9%] md:pt-3 z-0">
         <section id="accueil" class="flex  flex-col justify-between  items-center w-full mt-[5%] md:flex-row ">
             <div class="w-full space-y-10 md:space-y-6 lg:space-y-10 lg:w-1/2 md:w-full min-h-min">
                 <h1 class="text-4xl font-semibold lg:text-5xl">Buy <span class="text-primary">Your Car</span> Cheaper
@@ -134,5 +153,13 @@
      <footer class="w-full py-2 bg-primary">
         <p class="text-center text-white">FaizDev YouTube Copyright 2022</p>
     </footer>
+
+    <script>
+       let menu = document.querySelector(".menue")
+       function ontoggleMenu(e){
+        e.name= e.name==="menu"? "close": "menu"
+        menu.classList.toggle("hidden")
+       }
+    </script>
 </body>
 </html>
